@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bursary Care Advisor - Login</title>
+        
+        <!<!--  Bootstrap library link (External components) -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                background-image:url("Pictures/medium-shot-colleagues-posing-together_23-2148950574.avif");
+                background-position:center;
+                background-size:cover;
+                height:100vh;
+            }
+            .circle-img {
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 10px 20px;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            nav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            nav ul li {
+                display: inline;
+                margin-right: 20px;
+            }
+
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            nav ul li a:hover {
+                color: #ffcc00;
+            }
+
+            .container {
+                width: 80%;
+                margin: 20px auto;
+            }
+
+            .login-container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+
+            /* Style radio buttons and labels */
+            input[type="radio"] {
+                margin-right: 5px;
+                cursor: pointer;
+            }
+
+            label {
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            input[type="submit"],
+            .btn {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                cursor: pointer;
+                text-align: center;
+                background-color: #333;
+                color: #fff;
+                text-decoration: none;
+                display: block;
+            }
+
+            input[type="text"]:focus,
+            input[type="password"]:focus {
+                outline: none;
+                border-color: #555;
+            }
+
+            .btn:hover {
+                background-color: #555;
+            }
+
+            .forgot-password,
+            .create-account {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .forgot-password a,
+            .create-account a {
+                color: #333;
+                text-decoration: none;
+            }
+
+            .forgot-password a:hover,
+            .create-account a:hover {
+                color: #555;
+            }
+
+            .section {
+                padding: 40px;
+                background-color: #ffffff; /* Light gray */
+                margin: 20px auto;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                max-width: 900px;
+            }
+
+            #about {
+                background-color: #f0f0f0;
+            } /* Lighter gray for About section */
+            #services {
+                background-color: #e0e0e0;
+            } /* Even lighter gray for Services section */
+            #contact {
+                background-color: #d0d0d0;
+            } /* Even lighter gray for Contact section */
+
+            .section h2 {
+                color: #333;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .section p {
+                color: #555;
+                line-height: 1.8;
+            }
+
+            footer {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 3px 0;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+            .footer-images ul {
+                overflow: hidden;
+                white-space: nowrap;
+                padding: 0;
+                margin: 0;
+                animation: moveRow 40s linear infinite; /* Continuous animation from right to left */
+            }
+
+            .footer-images li {
+                display: inline-block;
+                vertical-align: top;
+                height: 417px;
+                width: 400px;
+                padding: 10px;
+            }
+            .footer-images img {
+                height: 100%; /* Set the height to 100% of the parent container */
+                width: auto; /* Let the width adjust automatically to maintain aspect ratio */
+                max-width: 100%; /* Ensure the image doesn't exceed the width of the parent container */
+            }
+
+            @keyframes moveRow {
+                0% {
+                    transform: translateX(100%);
+                } /* Start from the right */
+                100% {
+                    transform: translateX(-100%);
+                } /* Move to the left */
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <h2>Bursary Care Advisor</h2>
+                </div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="login.jsp">Login</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+
+
+
+
+        </header>
+ <div class="container footer-images">
+            <ul>
+                <li><img src="Pictures/group-five-african-college-students-spending-time-together-campus-university-yard-black-afro-friends-studying-education-theme_627829-6007.avif" alt="Image 1"></li>
+
+                <li><img src="Pictures/download (3).jpeg" alt ="Image 2"></li>
+                <li><img src="Pictures/download (2).jpeg" alt ="Image 3"></li>
+            </ul>
+        </div>
+
+
+
+
+
+
+
+        <div id="about" class="section">
+            <h2>About Us</h2>
+            <p>At <b>Bursary Care Advisor</b>, our mission is to make higher education accessible to all individuals, regardless of their financial circumstances. We believe that every student deserves the opportunity to pursue their academic aspirations, and we are committed to providing the support and resources needed to make that possible.</p>
+
+        </div>
+
+        <div id="services" class="section">
+            <h2>Our Services</h2>
+            <p>Introducing our Bursary Care Advisor program - a dedicated initiative aimed at helping students navigate the complexities of financial aid and bursaries. Our team of experienced advisors is here to assist you in identifying and applying for relevant bursaries, scholarships, and financial aid programs tailored to your individual needs.</p>
+            <p>Here are some of the services we offer through our Bursary Care Advisor program:</p>
+            <ul>
+                <li>Bursary eligibility assessment</li>
+                <li>Application assistance</li>
+                <li>Financial planning</li>
+                <li>Advocacy and support</li>
+                <li>Continued guidance throughout your academic journey</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>Email: info@bursarycareadvisor.com</p>
+            <p>Phone: (+012)-093-8346</p>
+            <p>Address: 123 Pretoria, Midrand, South Africa</p>
+            <p>Github : <a href="https://github.com/HermyMo/The-Invincibles.git"><img class="circle-img" src="Pictures/github-mark.png" alt="GitHub Icon" width="25"></a></p>
+            <p>Facebook : <a href="https://www.facebook.com/profile.php?id=61559516747176"><img class="circle-img" src="Pictures/download.png" alt="Facebook Icon" width="25"></a></p>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Bursary Care Advisor. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>

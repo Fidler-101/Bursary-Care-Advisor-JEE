@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Applicant Welcome Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style for the links */
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover style for the links */
+        a.button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1> Applicant Web Page</h1>
+    <ol>
+        <li> <a href="addApplicant.jsp" class="button">addApplicant</a> </li>
+        <li> <a href="ApplicantSearch.jsp" class="button">ApplicantSearch</a></li>
+        <li> <a href="DeleteApplicant.jsp" class="button">DeleteApplicant</a></li>
+        <li> <a href="ApplicantUpdate.jsp" class="button">ApplicantUpdate</a></li>
+        <li> <a href="ApplicantServlet.do" class="button">GetAllApplicant</a>  
+        <input type="hidden" name="option" value="getAll"/>
+        </li>
+    </ol>
+</body>
+</html>

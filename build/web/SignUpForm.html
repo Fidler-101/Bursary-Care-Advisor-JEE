@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Account Page</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f3f3f3;
+                margin: 0;
+                padding: 0;
+            }
+
+            #heading {
+                text-align: center;
+                font-size: 36px;
+                margin-top: 30px;
+                color: #333;
+                text-transform: uppercase;
+            }
+
+            .container {
+                max-width: 500px;
+                margin: 50px auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            form {
+                width: 100%;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: bold;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="date"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                transition: border-color 0.3s;
+            }
+
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            input[type="password"]:focus {
+                border-color: #4caf50;
+            }
+
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+                padding: 12px;
+                border: none;
+                background-color: black;
+                color: #fff;
+                cursor: pointer;
+                border-radius: 4px;
+                font-size: 16px;
+                transition: background-color 0.3s;
+            }
+
+            input[type="submit"]:hover {
+                background-color: gray;
+            }
+
+            .error-message {
+                color: red;
+                font-size: 0.8em;
+                margin-top: 5px;
+                display: none;
+            }
+
+            .terms-link {
+                color: blue;
+                text-decoration: none;
+            }
+
+            .terms-link:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="heading">CREATE ACCOUNT</p>
+        <div class="container">
+            <form action="ApplicantServlet.do" method="post" onsubmit="return validationForm()">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required>
+
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required>
+
+                <label for="idNumber">Identification Number:</label>
+                <input type="text" id="idNumber" name="idNumber" placeholder="0019206790101" required>
+
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" value="male" required>Male
+                <input type="radio" name="gender" value="female" required>Female
+
+                <label for="birthday">Date of Birth:</label>
+                <input type="date" id="birthday" name="birthday" required>
+
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" id="phone_number" name="phoneNumber" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Herman@gmail.com" required>
+
+                <label for="confirmEmail">Confirm Email:</label>
+                <input type="email" id="confirmEmail" name="confirmEmail" placeholder="Herman@gmail.com" required>
+                <span class="error-message" id="email-error">Emails do not match.</span>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <span class="error-message" id="password-error">Password must be at least 5 characters long, contain at least one digit, one letter, and one special character.</span>
+
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <span class="error-message" id="confirm-password-error">Passwords do not match.</span>
+
+                <label for="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    By continuing, you agree and accept our <a href="Privacy.jsp" class="terms-link">Privacy Policy</a> & 
+                    <a href="terms.jsp" class="terms-link">Terms of Service</a>.
+                </label>
+
+                <input type="submit" value="CREATE ACCOUNT">
+                <input type="hidden" name="option" value="add">
+            </form>
+        </div>
+        <script>
+            function validationForm() {
+            // Get form elements
+            var email = document.getElementById("email").value;
+            var confirmEmail = document.getElementById("confirmEmail").value;
+            var emailError = document.getElementById("email-error");
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var passwordError = document.getElementById("password-error");
+            var confirmPasswordError = document.getElementById("confirm-password-error");
+            // Hide error messages initially
+            emailError.style.display = "none";
+            passwordError.style.display = "none";
+            confirmPasswordError.style.display = "none";
+            // Check if emails match
+            if (email !== confirmEmail) {
+            emailError.style.display = "block";
+            return false;
+            }
+
+            // Password validation
+            var passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/;
+            if (!passwordPattern.test(password)) {
+            passwordError.style.display = "block";
+            return false;
+            }
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+            confirmPasswordError.style.display = "block";
+            return false;
+            }
+
+            // Check if all required fields are filled
+            var username = document.getElementById("username").value;
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var idNumber = document.getElementById("idNumber").value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var birthday = document.getElementById("birthday").value;
+            var phoneNumber = document.getElementById("phone_number").value;
+            var terms = document.getElementById("terms").checked;
+            
+            if (/\d/.test(firstname)) {
+            alert("First name cannot contain numbers.");
+            return false;
+            }
+
+            // Check if lastname contains numbers
+            if (/\d/.test(lastname)) {
+            alert("Last name cannot contain numbers.");
+            return false;
+            }
+
+            // Check if ID length is not 13
+            if (idNumber.length !== 13) {
+            alert("Identification Number must be exactly 13 characters long.");
+            return false;
+            }
+
+            // Rest of the validation logic remains the same
+            // ...
+
+            // If all validations pass, return true to submit the form
+            return true;
+
+            if (username !== "" && firstname !== "" && lastname !== "" && idNumber !== "" && gender !== null &&
+                    birthday !== "" && phoneNumber !== "" && email !== "" && confirmEmail !== "" && password !== "" &&
+                    confirmPassword !== "" && terms) {
+            // All required fields are filled, allow form submission
+            return true;
+            } else {
+            // Some required fields are empty, prevent form submission
+            alert("Please fill in all required fields.");
+            return false;
+            }
+
+            }
+        </script>
+    </body>
+</html>
